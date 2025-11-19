@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log*
+src/*.html
+src/*.css
+src/*.js
+screenshots/screenshot.png
+screenshots/screenshot.txt

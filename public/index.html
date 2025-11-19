@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Cloner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Webpage Cloner</h1>
+            <p>Enter a URL to scrape and clone a webpage</p>
+        </header>
+        
+        <main>
+            <section class="input-section">
+                <form id="cloner-form">
+                    <div class="input-group">
+                        <label for="url-input">Enter URL:</label>
+                        <input type="url" id="url-input" name="url" placeholder="https://example.com" required>
+                    </div>
+                    
+                    <div class="options-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-css" name="include-css" checked>
+                            <label for="include-css">Include CSS</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-images" name="include-images" checked>
+                            <label for="include-images">Include Images</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-scripts" name="include-scripts">
+                            <label for="include-scripts">Include Scripts</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="ignore-robots" name="ignore-robots">
+                            <label for="ignore-robots">Allow scraping (bypass restrictions)</label>
+                        </div>
+                    </div>
+
+                    <div id="robots-warning" class="warning-message hidden">
+                        <p>⚠️ Warning: Some websites prohibit scraping in their terms of service.
+                        Please ensure you have permission to scrape this website before proceeding.</p>
+                    </div>
+                    
+                    <button type="submit" id="clone-btn">Clone Webpage</button>
+                </form>
+            </section>
+            
+            <section class="results-section">
+                <div id="loading" class="hidden">
+                    <p>Cloning webpage... Please wait</p>
+                    <div class="spinner"></div>
+                </div>
+                
+                <div id="error" class="hidden error-message">
+                    <p id="error-text"></p>
+                </div>
+                
+                <div id="success" class="hidden success-message">
+                    <p>Webpage cloned successfully!</p>
+                    <a id="download-link" href="#" download>Download Cloned Webpage</a>
+                </div>
+            </section>
+            
+            <section class="preview-section">
+                <h2>Preview</h2>
+                <div id="preview-container">
+                    <iframe id="preview-frame" sandbox="allow-same-origin allow-scripts"></iframe>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Note: Only websites that allow scraping in their robots.txt will be processed by default.
+            Use "Allow scraping" option to bypass restrictions. Always respect website terms of service and copyright laws.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
