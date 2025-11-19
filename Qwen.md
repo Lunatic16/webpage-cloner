@@ -11,6 +11,7 @@ This project is a web application that allows users to scrape and clone webpages
 - Asset handling (downloads and embeds CSS, images)
 - Cross-origin security measures
 - Option to bypass robots.txt with appropriate warnings
+- Visual interface preview (screenshots/screenshot.png)
 
 ## Architecture
 
@@ -25,6 +26,9 @@ This project is a web application that allows users to scrape and clone webpages
 - `public/script.js` - Frontend JavaScript functionality
 - `server.js` - Backend server with scraping functionality
 - `package.json` - Project dependencies and configuration
+- `.gitignore` - Git ignore configuration
+- `screenshots/screenshot.png` - Visual representation of the UI
+- `screenshots/screenshot-ui.html` - HTML representation of the UI
 - `src/` - Directory for storing cloned pages and assets
 
 ## Setup and Usage
@@ -40,3 +44,4 @@ This project is a web application that allows users to scrape and clone webpages
 - Only processes assets from the same domain as the main page
 - Sanitizes filenames to prevent directory traversal attacks
 - Uses a sandboxed iframe for content preview
+- Includes option to bypass robots.txt with appropriate warnings
